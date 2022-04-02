@@ -1,3 +1,5 @@
+//for easyone branch
+
 package java8;
 
 public class lambdacl  {
@@ -5,9 +7,7 @@ public class lambdacl  {
 	public static void main(String[] args) {
 		
 
-		Funinter f2= (int a,int b)->  {return (a+b) ;};    //this method will called as closure
-		
-		System.out.println(f2.add(10, 20));
+		FunInter f1= () { return "this is easy" };   // accessing abstract method
 		
 		Funinter.set();    //accessing static method
 		
@@ -27,7 +27,7 @@ package java8;
 @FunctionalInterface
 public interface Funinter {     ///functionalinterface should consist of only one abstract method
 	
-	public abstract int add(int a,int b);
+	public abstract int easy();
 	
 	default int get() {
 		return 100;
