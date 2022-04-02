@@ -1,0 +1,48 @@
+package java8;
+
+public class lambdacl  {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Funinter f1=()->System.out.println("calling funinter method");
+		
+		//f1.add();
+
+		Funinter f2= (int a,int b)->  {return (a+b) ;};    //this method will called as closure
+		
+		System.out.println(f2.add(10, 20));
+		
+		Funinter.set();    //accessing static method
+		
+		System.out.println(f2.get());  //accessing default method
+		
+		f2.normal();   //accessing default method
+	}
+
+}
+
+-----------------------------------------------
+
+
+package java8;
+
+
+@FunctionalInterface
+public interface Funinter {     ///functionalinterface should consist of only one abstract method
+	
+	public abstract int add(int a,int b);
+	
+	default int get() {
+		return 100;
+		}
+	
+	default void normal() {
+		System.out.print("from normal method");
+	}
+	
+	static void set() {
+		System.out.println("static method");
+	}
+
+}
